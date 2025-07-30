@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 16:54:16 by enschnei          #+#    #+#             */
-/*   Updated: 2025/07/29 19:36:20 by enschnei         ###   ########.fr       */
+/*   Created: 2025/07/30 17:23:09 by enschnei          #+#    #+#             */
+/*   Updated: 2025/07/30 21:18:56 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main() 
+int main(int ac, char **av)
 {
-    Zombie *zombie = newZombie ("Zombie *hungry*");
-    Zombie *zombie2 = newZombie ("Zombie *brainless*");
-    zombie->announce();
-    zombie2->announce();
-    randomChump("Zombie *strong one*");
-    delete zombie;
-    delete zombie2;
+    if (ac != 2)
+        return (std::cout << "Error arguments" << std::endl, 1);
+    int n = atoi(av[1]);
+    if (!n)
+        return (std::cout << "Error atoi" << std::endl, 1);
+    Zombie *horde = zombieHorde(n, "Zombie");
+    for (int i = 0; i < n; i++)
+        horde[i].announce();
+    delete [] horde;
     return (0);
 }

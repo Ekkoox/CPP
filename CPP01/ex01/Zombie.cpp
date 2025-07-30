@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 16:54:16 by enschnei          #+#    #+#             */
-/*   Updated: 2025/07/29 19:36:20 by enschnei         ###   ########.fr       */
+/*   Created: 2025/07/30 17:22:23 by enschnei          #+#    #+#             */
+/*   Updated: 2025/07/30 21:16:50 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main() 
+Zombie::Zombie()
 {
-    Zombie *zombie = newZombie ("Zombie *hungry*");
-    Zombie *zombie2 = newZombie ("Zombie *brainless*");
-    zombie->announce();
-    zombie2->announce();
-    randomChump("Zombie *strong one*");
-    delete zombie;
-    delete zombie2;
-    return (0);
+}
+
+Zombie::Zombie(std::string name) : name(name)
+{
+    std::cout << this->name << " has been created" << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+    this->name = name;
+}
+
+void Zombie::announce(void)
+{
+    std::cout << this->name << ": NIIIIIEEEEEEEEEELL" << std::endl;
 }

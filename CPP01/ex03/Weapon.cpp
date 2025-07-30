@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 16:54:16 by enschnei          #+#    #+#             */
-/*   Updated: 2025/07/29 19:36:20 by enschnei         ###   ########.fr       */
+/*   Created: 2025/07/30 21:59:25 by enschnei          #+#    #+#             */
+/*   Updated: 2025/07/30 22:00:54 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int main() 
+void getType(void)
 {
-    Zombie *zombie = newZombie ("Zombie *hungry*");
-    Zombie *zombie2 = newZombie ("Zombie *brainless*");
-    zombie->announce();
-    zombie2->announce();
-    randomChump("Zombie *strong one*");
-    delete zombie;
-    delete zombie2;
-    return (0);
+    return ;
 }
