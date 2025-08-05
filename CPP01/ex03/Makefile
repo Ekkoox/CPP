@@ -1,4 +1,4 @@
-NAME    = HIS_THIS_IS_BRAIN
+NAME    = HUMAN_ATTACK
 SRCS    = main.cpp\
 			HumanA.cpp\
 			HumanB.cpp\
