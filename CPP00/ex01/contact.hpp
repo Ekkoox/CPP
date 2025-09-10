@@ -2,15 +2,20 @@
 #define CONTACT_H
 
 #include <string>
+#include <iostream>
+#include <iomanip>
+
 
 class Contact{
     private: 
-        std::string firstname;
-        std::string lastname;
-        std::string nickname;
-        std::string phoneNumber;
-        std::string darkestsecret;
+        std::string _firstname;
+        std::string _lastname;
+        std::string _nickname;
+        std::string _phoneNumber;
+        std::string _darkestsecret;
     public:
+        Contact() {}
+        ~Contact() {}
         void setFirstName(const std::string &name);
         void setLastName(const std::string &name);
         void setNickname(const std::string &name);
@@ -26,4 +31,3 @@ class Contact{
 };
 
 #endif
-
