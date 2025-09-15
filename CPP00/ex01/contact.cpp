@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:24:16 by enschnei          #+#    #+#             */
-/*   Updated: 2025/09/10 16:07:53 by marvin           ###   ########.fr       */
+/*   Updated: 2025/09/11 12:43:18 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void Contact::setNickname(const std::string &name) {
 }
 
 void Contact::setPhoneNumber(const std::string &number) {
-    phoneNumber = number;
+    _phoneNumber = number;
 }
 
 void Contact::setDarkestSecret(const std::string &secret) {
@@ -49,7 +49,7 @@ std::string Contact::getNickname() const {
 }
 
 std::string Contact::getPhoneNumber() const {
-    return phoneNumber;
+    return _phoneNumber;
 }
 
 std::string Contact::getDarkestSecret() const {
