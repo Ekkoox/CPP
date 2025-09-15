@@ -18,6 +18,7 @@ PhoneBook::PhoneBook() : contactCount(0), oldestIndex(0) {
 
 // Destructeur
 PhoneBook::~PhoneBook() {
+    std::cout << "PhoneBook destroyed." << std::endl;
 }
 
 // Implémentation de addContact
