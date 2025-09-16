@@ -10,19 +10,8 @@ class Zombie {
 
     public :
         Zombie();
+        ~Zombie();
         Zombie (std::string name);
-        void announce(void);
-        void setName(std::string name);
-
-};
-
-class Zombie2 {
-    private :
-        std::string name;
-
-    public :
-        Zombie2() {}
-        Zombie2 (std::string name);
         void announce(void);
         void setName(std::string name);
 

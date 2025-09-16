@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 17:22:23 by enschnei          #+#    #+#             */
-/*   Updated: 2025/08/01 17:42:36 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/09/16 16:21:12 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 Zombie::Zombie()
 {
+}
+
+Zombie::~Zombie()
+{
+    std::cout << this->name << " is destroyed" << std::endl;
 }
 
 void Zombie::setName(std::string name)
