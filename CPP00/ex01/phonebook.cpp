@@ -21,7 +21,6 @@ PhoneBook::~PhoneBook() {
     std::cout << "PhoneBook destroyed." << std::endl;
 }
 
-// Implémentation de addContact
 void PhoneBook::addContact() {
     Contact newContact;
     std::string input;
@@ -46,16 +45,13 @@ void PhoneBook::addContact() {
     std::getline(std::cin, input);
     newContact.setDarkestSecret(input);
 
-    // Ajouter dans le tableau
     if (contactCount < 8) {
         contacts[contactCount] = newContact;
         contactCount++;
     } else {
-        // Si plein, on écrase le plus ancien
         contacts[oldestIndex] = newContact;
         oldestIndex = (oldestIndex + 1) % 8;
     }
-
     std::cout << "Contact added successfully!" << std::endl;
 }
 
@@ -72,7 +68,6 @@ void PhoneBook::searchContact() {
         return;
     }
 
-    // Affichage du tableau
     std::cout << std::setw(10) << "Index" << "|"
               << std::setw(10) << "First Name" << "|"
               << std::setw(10) << "Last Name" << "|"
