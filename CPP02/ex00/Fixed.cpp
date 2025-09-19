@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:13:44 by enschnei          #+#    #+#             */
-/*   Updated: 2025/09/16 18:26:54 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/09/18 15:43:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,6 @@ Fixed &Fixed::operator=(const Fixed &src) {
     return *this;
 }
 
-// Fixed &Fixed::operator--() {
-//     this->_value--;
-//     return *this;
-// }
-// Fixed Fixed::operator--(int) {
-//     Fixed temp = *this;
-//     this->_value--;
-//     return temp;
-// }
-
 Fixed::~Fixed(){
     std::cout << "Destructor called" << std::endl;
 }
@@ -48,6 +38,6 @@ int Fixed::getRawBits(void) const {
     return this->_value;
 }
 
-void Fixed::SetRawBits(int const raw){
+void Fixed::setRawBits(int const raw){
     this->_value = raw;
 }
