@@ -1,5 +1,6 @@
-NAME    = megaphone
-SRCS    = megaphone.cpp
+NAME    = fixed
+SRCS    = main.cpp\
+		  	Fixed.cpp
 CXX     = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 

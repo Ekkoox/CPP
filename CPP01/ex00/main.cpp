@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 16:54:16 by enschnei          #+#    #+#             */
-/*   Updated: 2025/09/16 13:03:15 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/09/19 17:33:26 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main()
     zombie->announce();
     zombie2->announce();
     randomChump("Zombie *strong one*");
+    randomChump("Zombie *fat one*");
     delete zombie;
     delete zombie2;
     return (0);
