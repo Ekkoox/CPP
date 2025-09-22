@@ -17,6 +17,24 @@ class Fixed {
         Fixed(const Fixed &src);
         ~Fixed();
         Fixed &operator=(const Fixed &srx);
+        Fixed operator+(const Fixed &rhs) const;
+        Fixed operator-(const Fixed &rhs) const;
+        Fixed operator*(const Fixed &rhs) const;
+        Fixed operator/(const Fixed &rhs) const;
+        Fixed &operator++(void); // Prefix increment
+        Fixed operator++(int); // Postfix increment
+        Fixed &operator--(void); // Prefix decrement
+        Fixed operator--(int); // Postfix decrement
+        bool operator>(const Fixed &rhs) const;
+        bool operator<(const Fixed &rhs) const;
+        bool operator>=(const Fixed &rhs) const;
+        bool operator<=(const Fixed &rhs) const;
+        bool operator==(const Fixed &rhs) const;
+        bool operator!=(const Fixed &rhs) const;
+        static Fixed &min(Fixed &a, Fixed &b);
+        static const Fixed &min(const Fixed &a, const Fixed &b);
+        static Fixed &max(Fixed &a, Fixed &b);
+        static const Fixed &max(const Fixed &a, const Fixed &b);
         int getRawBits(void) const;
         void setRawBits(int const raw);
         float toFloat(void) const;

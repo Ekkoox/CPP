@@ -42,7 +42,7 @@ int main(int ac, char **av)
     std::string s2 = av[3];
 
     std::ifstream infile(av[1]);
-    if (!infile.is_open()) 
+    if (!infile.is_open())
     {
         std::cerr << "Error opening input file" << std::endl;
         return 1;
