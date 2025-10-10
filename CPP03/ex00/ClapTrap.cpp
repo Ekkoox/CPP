@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:02:24 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/09 19:08:42 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/10 18:06:16 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ ClapTrap::ClapTrap() {
     this->_hitpoints = 10;
     this->_energy_points = 10;
     this->_attack_damage = 0;
+    std::cout << "PNJ constructor created" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) {
@@ -26,6 +27,22 @@ ClapTrap::ClapTrap(std::string name) {
     this->_hitpoints = 10;
     this->_energy_points = 10;
     this->_attack_damage = 0;
+    std::cout << this->_name << " constructor created" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other) {
+    std::cout << BOLD << MAGENTA << "====== " << other._name << " COPIED ======" << RESET << std::endl;
+    *this = other;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
+    if (this != &other) {
+        this->_name = other._name;
+        this->_hitpoints = other._hitpoints;
+        this->_energy_points = other._energy_points;
+        this->_attack_damage = other._attack_damage;
+    }
+    return *this;
 }
 
 ClapTrap::~ClapTrap() {
@@ -65,4 +82,8 @@ void ClapTrap::showLifePoints() {
 
 void ClapTrap::showEnergyPoints() {
     std::cout << this->_name << " has " << CYAN << this->_energy_points << RESET << " EP left." << std::endl;
+}
+
+unsigned int ClapTrap::getEnergyPoints() const {
+    return this->_energy_points;
 }

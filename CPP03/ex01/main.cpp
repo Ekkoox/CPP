@@ -6,22 +6,108 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 17:24:28 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/09 18:03:09 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/10 18:34:31 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main ()
 {
-    Claptrap claptrap = Claptrap("Claptrap");
-    Claptrap ennemi = Claptrap("Ennemi");
+    ClapTrap claptrap = ClapTrap("ClapTrap");
+    claptrap.showLifePoints();
+    ScavTrap scavtrap = ScavTrap("ScavTrap");
+    scavtrap.showLifePoints();
+    ClapTrap bandit = ClapTrap("Bandit");
+    bandit.showLifePoints();
+    ScavTrap Bandit_guardian = ScavTrap("Bandit Guardian");
+    Bandit_guardian.showLifePoints();
+    ClapTrap pnJ = ClapTrap();
+    pnJ.showLifePoints();
+
+    std::cout << BOLD << MAGENTA << "====== ClapTrap BATTLE PHASE ======" << RESET << std::endl;
+    for (int i = 0; i < 13; i++)
+    {
+        claptrap.attack("Bandit");
+        claptrap.showEnergyPoints();
+        if (claptrap.getEnergyPoints() > 0) 
+            bandit.takeDamage(claptrap.getAttackDamage());
+    }
+
+    std::cout << BOLD << MAGENTA << "====== Bandit REPAIR PHASE ======" << RESET << std::endl;
+    if (bandit.getHitPoints() > 0)
+        bandit.beRepaired(20);
+    bandit.showLifePoints();
     
-    claptrap.showlifepoints();
-    claptrap.attack("Zombie");
-    ennemi.attack("Claptrap");
-    claptrap.takeDamage(0);
-    claptrap.beRepaired(3);
-    claptrap.showlifepoints();
+    std::cout << BOLD << MAGENTA << "====== Bandit BATTLE PHASE ======" << RESET << std::endl;
+    for (int i = 0; i < 3; i++)
+    {
+        bandit.attack("Claptrap");
+        bandit.showEnergyPoints();
+        if (bandit.getEnergyPoints() > 0) 
+            claptrap.takeDamage(bandit.getAttackDamage());
+    }
+    
+    std::cout << BOLD << MAGENTA << "====== ClapTrap REPAIR PHASE ======" << RESET << std::endl;
+    if (claptrap.getHitPoints() > 0)
+        claptrap.beRepaired(30);
+    
+    std::cout << BOLD << MAGENTA << "====== ScavTrap BATTLE PHASE ======" << RESET << std::endl;
+    while(bandit.getHitPoints() >= 0 && scavtrap.getEnergyPoints() > 0)
+    {
+        if (bandit.getHitPoints() == 0)
+        {
+            std::cout << BOLD << CYAN << "Bandit is dead ! " << RESET << std::endl;
+            break ;
+        }
+        scavtrap.attack("Bandit");
+        scavtrap.showEnergyPoints();
+        if (scavtrap.getEnergyPoints() > 0) 
+            bandit.takeDamage(scavtrap.getAttackDamage());
+    }
+    
+    std::cout << BOLD << MAGENTA << "====== Bandit REPAIR PHASE ======" << RESET << std::endl;
+        bandit.beRepaired(20);
+    if (bandit.getHitPoints() > 0)
+        bandit.showLifePoints();
+
+    std::cout << BOLD << MAGENTA << "====== ScavTrap GUARDIAN MODE ======" << RESET << std::endl;
+    if (scavtrap.getHitPoints() > 0)
+    {
+        scavtrap.setGuardMode(true);
+        scavtrap.guardGate();
+    }
+    else
+        std::cout << RED << "ScavTrap is dead and cannot enter Guardian Mode." << RESET << std::endl;
+
+    std::cout << BOLD << MAGENTA << "====== Bandit Guardian BATTLE PHASE ======" << RESET << std::endl;
+    bool guardModeChanged = false;
+    while(scavtrap.getEnergyPoints() >= 0 && Bandit_guardian.getHitPoints() > 0)
+    {
+        if (scavtrap.getHitPoints() == 0)
+        {
+            std::cout << BOLD << CYAN << "Scavtrap is dead ! " << RESET << std::endl;
+            break ;
+        }
+        Bandit_guardian.attack("Scavtrap");
+        Bandit_guardian.showEnergyPoints();
+        if (Bandit_guardian.getEnergyPoints() > 0) 
+            scavtrap.takeDamage(Bandit_guardian.getAttackDamage());
+        if (scavtrap.getHitPoints() <= 50 && !guardModeChanged)
+        {
+            scavtrap.setGuardMode(false);
+            scavtrap.guardGate();
+            guardModeChanged = true;
+        }
+    }
+        
+    std::cout << BOLD << MAGENTA << "====== END OF THE BATTLE ======" << RESET << std::endl;
+    claptrap.showLifePoints();
+    bandit.showLifePoints();
+    scavtrap.showLifePoints();
+    Bandit_guardian.showLifePoints();
+    
+    std::cout << BOLD << MAGENTA << "====== DESTRUCTOR ======" << RESET << std::endl;
     return (0);
 }

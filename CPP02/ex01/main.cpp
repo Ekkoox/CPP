@@ -13,6 +13,9 @@
 #include "Fixed.hpp"
 
 int main (void) {
+
+    // Mandatory test
+    
     Fixed a;
     Fixed const b(10);
     Fixed const c(42.42f);
@@ -29,6 +32,16 @@ int main (void) {
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
     std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+    // Personal test
+
+    Fixed e(-10);
+    Fixed f(-42.42f);
+
+    std::cout << "e is " << e << " (should be around -10)" << std::endl;
+    std::cout << "f is " << f << " (should be around -42.42)" << std::endl;
+    std::cout << "e as int: " << e.toInt() << std::endl;
+    std::cout << "f as int: " << f.toInt() << std::endl;
 
     return (0);
 }
