@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:01:52 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/10 16:42:54 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/13 15:45:27 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int main ()
 {
+    std::cout << BOLD << RED << "===== INITIALIZED OF THE GAME =====" << RESET << std::endl;
     ClapTrap claptrap = ClapTrap("ClapTrap");
     claptrap.showLifePoints();
-    ClapTrap ennemi = ClapTrap("Bandit");
-    ennemi.showLifePoints();
+    ClapTrap bandit = ClapTrap("Bandit");
+    bandit.showLifePoints();
     ClapTrap pnJ = ClapTrap();
     pnJ.showLifePoints();
 
@@ -27,20 +28,21 @@ int main ()
         claptrap.attack("Bandit");
         claptrap.showEnergyPoints();
         if (claptrap.getEnergyPoints() > 0) 
-            ennemi.takeDamage(0);
+            bandit.takeDamage(0);
     }
-    ennemi.showLifePoints();
+    bandit.showLifePoints();
     std::cout << BOLD << MAGENTA << "====== Bandit BATTLE PHASE ======" << RESET << std::endl;
-    ennemi.attack("Claptrap");
+    bandit.attack("Claptrap");
     claptrap.takeDamage(0);
     claptrap.showLifePoints();
     std::cout << BOLD << MAGENTA << "====== ClapTrap REPAIR PHASE ======" << RESET << std::endl;
     claptrap.beRepaired(3);
     std::cout << BOLD << MAGENTA << "====== Bandit REPAIR PHASE ======" << RESET << std::endl;
-    ennemi.beRepaired(2);
+    bandit.beRepaired(2);
     std::cout << BOLD << MAGENTA << "====== END OF THE BATTLE ======" << RESET << std::endl;
     claptrap.showLifePoints();
-    ennemi.showLifePoints();
-    std::cout << BOLD << MAGENTA << "====== DESTRUCTOR ======" << RESET << std::endl;
+    bandit.showLifePoints();
+
+    std::cout << BOLD << RED << "====== END OF THE GAME ======" << RESET << std::endl;
     return (0);
 }

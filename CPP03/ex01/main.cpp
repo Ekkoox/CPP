@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 17:24:28 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/10 18:34:31 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/13 15:44:57 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main ()
 {
+    std::cout << BOLD << RED << "===== INITIALIZED OF THE GAME =====" << RESET << std::endl;
     ClapTrap claptrap = ClapTrap("ClapTrap");
     claptrap.showLifePoints();
     ScavTrap scavtrap = ScavTrap("ScavTrap");
@@ -108,6 +109,6 @@ int main ()
     scavtrap.showLifePoints();
     Bandit_guardian.showLifePoints();
     
-    std::cout << BOLD << MAGENTA << "====== DESTRUCTOR ======" << RESET << std::endl;
+    std::cout << BOLD << RED << "====== END OF THE GAME ======" << RESET << std::endl;
     return (0);
 }

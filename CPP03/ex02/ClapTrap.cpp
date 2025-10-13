@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:02:24 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/13 15:22:25 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:08:27 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,13 @@ unsigned int ClapTrap::getHitPoints() const {
 
 unsigned int ClapTrap::getAttackDamage() const {
     return this->_attack_damage;
+}
+
+std::string ClapTrap::getName() const {
+    return this->_name;
+}
+
+void ClapTrap::setTemporaryBoost(int attackBoost, int energyBoost) {
+    this->_attack_damage += attackBoost;
+    this->_energy_points += energyBoost;
 }

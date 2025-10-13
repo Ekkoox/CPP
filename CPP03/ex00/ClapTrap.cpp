@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:02:24 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/10 18:06:16 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/13 15:22:37 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
 }
 
 ClapTrap::~ClapTrap() {
+    std::cout << BOLD << MAGENTA << "====== " << this->_name << " DESTRUCTED ======" << RESET << std::endl;
     std::cout << this->_name << " destructor called" << std::endl;
 }
 
