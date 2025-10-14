@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 13:27:33 by enschnei          #+#    #+#             */
-/*   Updated: 2025/09/16 18:27:06 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/14 15:59:16 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@ int	main(void)
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
-
-	// std::cout << (--a).getRawBits() << std::endl;
-	// std::cout << a--.getRawBits() << std::endl;
-	// std::cout << a.getRawBits() << std::endl;
     
 	return (0);
 }

@@ -35,13 +35,18 @@ int main (void) {
 
     // Personal test
 
+    std::cout << "=========================== Personal test ===========================" << std::endl;
+    
     Fixed e(-10);
     Fixed f(-42.42f);
 
-    std::cout << "e is " << e << " (should be around -10)" << std::endl;
-    std::cout << "f is " << f << " (should be around -42.42)" << std::endl;
+    std::cout << "e is " << e << std::endl;
+    std::cout << "f is " << f << std::endl;
     std::cout << "e as int: " << e.toInt() << std::endl;
     std::cout << "f as int: " << f.toInt() << std::endl;
+    std::cout << "e as float: " << e.toFloat() << std::endl;
+    std::cout << "f as float: " << f.toFloat() << std::endl;
+
 
     return (0);
 }

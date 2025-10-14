@@ -6,14 +6,13 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:46:06 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/13 16:11:45 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/14 12:47:34 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-#include <unistd.h> // sleep
 
 int main ()
 {
@@ -50,7 +49,7 @@ int main ()
     {
         bandit.attack("Claptrap");
         bandit.showEnergyPoints();
-        if (bandit.getEnergyPoints() > 0) 
+        if (bandit.getEnergyPoints() > 0)
             claptrap.takeDamage(bandit.getAttackDamage());
     }
     
