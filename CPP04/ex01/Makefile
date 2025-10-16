@@ -2,6 +2,7 @@ NAME    = Polymorphisme
 SRCS    = main.cpp\
 			Cat.cpp\
 			Dog.cpp\
+			Brain.cpp\
 			Animal.cpp\
 			WrongCat.cpp\
 			WrongAnimal.cpp
