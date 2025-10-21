@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:37:23 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/16 16:05:52 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/20 15:34:56 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main()
     {
         Dog tmp = basic;
     } // ici, tmp est détruit ⇒ on vérifie qu’il ne supprime pas le Brain de basic
-
+    
     std::cout << "\n----- ARRAY OF ANIMALS -----" << std::endl;
 
     Animal* animals[4];

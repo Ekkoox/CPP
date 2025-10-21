@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:15:04 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/16 13:51:19 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/17 16:47:01 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ Dog::Dog() {
     std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &src) {
-    *this = src;
+Dog::Dog(const Dog &src) : Animal() {
     this->brain = new Brain(*src.brain);
     std::cout << "Dog copy constructor called" << std::endl;
 }

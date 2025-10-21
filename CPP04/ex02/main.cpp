@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:37:23 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/16 16:42:22 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/17 16:07:02 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int main()
     for (int i = 0; i < 4; i++)
         delete animals[i];
 
-    return 0;
+    return (0);
 }
 

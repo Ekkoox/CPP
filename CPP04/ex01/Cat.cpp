@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:11:58 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/16 13:50:50 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/17 16:46:52 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ Cat::Cat() {
     std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &src) {
-    *this = src;
+Cat::Cat(const Cat &src) : Animal() {
     this->brain = new Brain(*src.brain);
     std::cout << "Cat copy constructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:23:33 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/16 16:37:14 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/17 16:00:37 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,3 @@ std::string Animal::getType() const {
 void Animal::setType(const std::string &type) {
     this->_type = type;
 }
-
-// void Animal::makeSound() const {
-//     std::cout << "Animal sound!" << std::endl;
-// }
