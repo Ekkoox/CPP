@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:38:02 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/28 16:53:40 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:00:43 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,15 @@ int main()
 
         std::cout << "\n--- Alice tries to sign TaxForm ---" << std::endl;
         alice.signForm(taxForm);
+        std::cout << taxForm << std::endl;
 
         std::cout << "\n--- Bob tries to sign TaxForm ---" << std::endl;
         bob.signForm(taxForm);
-
+        std::cout << taxForm << std::endl;
+        
         std::cout << "\n--- Bob tries to sign VacationForm ---" << std::endl;
         bob.signForm(vacationForm);
+        std::cout << vacationForm << std::endl;
 
         std::cout << "\n" << taxForm << std::endl;
         std::cout << vacationForm << std::endl;
