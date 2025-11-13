@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:38:02 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/27 17:02:50 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:15:35 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main()
     {
         Bureaucrat top("Top", 1);
         std::cout << top << std::endl;
-        top.incrementGrade(); // devrait lancer une exception
+        top.incrementGrade();
     }
     catch (std::exception &e)
     {
@@ -69,7 +69,7 @@ int main()
     {
         Bureaucrat bottom("Bottom", 150);
         std::cout << bottom << std::endl;
-        bottom.decrementGrade(); // devrait lancer une exception
+        bottom.decrementGrade();
     }
     catch (std::exception &e)
     {

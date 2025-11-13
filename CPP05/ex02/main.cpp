@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:38:02 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/31 17:56:01 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:51:26 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,53 +17,55 @@
 
 int main()
 {
-    // {
-    // std::cout << "===== TEST 1: SHRUBBERY CREATION =====" << std::endl;
-    // try
-    // {
-    //     Bureaucrat john("John", 1);
-    //     ShrubberyCreationForm shrub("garden");
-    //     std::cout << shrub << std::endl;
-    //     john.signForm(shrub);
-    //     std::cout << shrub << std::endl;
-    //     john.executeForm(shrub);
-    //     std::cout << std::endl;
-    // }
-    // catch (std::exception &e)
-    // {
-    //     std::cerr << "Exception: " << e.what() << std::endl;
-    // }
-    // std::cout << "===== TEST 2: SHRUBBERY EXCEPTION =====" << std::endl;
-    // try
-    // {
-    //     Bureaucrat john("John", 150);
-    //     ShrubberyCreationForm shrub("garden");
-    //     std::cout << shrub << std::endl;
-    //     john.signForm(shrub);
-    //     std::cout << shrub << std::endl;
-    //     john.executeForm(shrub);
-    //     std::cout << std::endl;
-    // }
-    // catch (std::exception &e)
-    // {
-    //     std::cerr << "Exception: " << e.what() << std::endl;
-    // }
-    // std::cout << "===== TEST 3: SHRUBBERY SIGN BUT NOT EXECUTE =====" << std::endl;
-    // try
-    // {
-    //     Bureaucrat john("John", 1);
-    //     Bureaucrat boss("Boss", 150);
-    //     ShrubberyCreationForm shrub("garden");
-    //     std::cout << shrub << std::endl;
-    //     john.signForm(shrub);
-    //     std::cout << shrub << std::endl;
-    //     boss.executeForm(shrub);
-    //     std::cout << std::endl;
-    // }
-    // catch (std::exception &e)
-    // {
-    //     std::cerr << "Exception: " << e.what() << std::endl;
-    // }
+    {
+    std::cout << "===== TEST 1: SHRUBBERY CREATION =====" << std::endl;
+    try
+    {
+        Bureaucrat john("John", 1);
+        ShrubberyCreationForm shrub("garden");
+        std::cout << shrub << std::endl;
+        john.signForm(shrub);
+        std::cout << "Test already signed" << std::endl;
+            john.signForm(shrub);
+        std::cout << shrub << std::endl;
+        john.executeForm(shrub);
+        std::cout << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+    std::cout << "===== TEST 2: SHRUBBERY EXCEPTION =====" << std::endl;
+    try
+    {
+        Bureaucrat john("John", 150);
+        ShrubberyCreationForm shrub("garden");
+        std::cout << shrub << std::endl;
+        john.signForm(shrub);
+        std::cout << shrub << std::endl;
+        john.executeForm(shrub);
+        std::cout << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+    std::cout << "===== TEST 3: SHRUBBERY SIGN BUT NOT EXECUTE =====" << std::endl;
+    try
+    {
+        Bureaucrat john("John", 1);
+        Bureaucrat boss("Boss", 150);
+        ShrubberyCreationForm shrub("garden");
+        std::cout << shrub << std::endl;
+        john.signForm(shrub);
+        std::cout << shrub << std::endl;
+        boss.executeForm(shrub);
+        std::cout << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
     
     // {
     //     srand(time(0));
@@ -73,6 +75,8 @@ int main()
     //         Bureaucrat alice("Alice", 1);
     //         RobotomyRequestForm robotomy("Bob");
     //         std::cout << robotomy << std::endl;
+    //         alice.signForm(robotomy);
+    //         std::cout << "Test already signed" << std::endl;
     //         alice.signForm(robotomy);
     //         std::cout << robotomy << std::endl;
     //         alice.executeForm(robotomy);
@@ -123,6 +127,8 @@ int main()
     //         PresidentialPardonForm pardon("George");
     //         std::cout << pardon << std::endl;
     //         frank.signForm(pardon);
+    //         std::cout << "Test already signed" << std::endl;
+    //         frank.signForm(pardon);
     //         std::cout << pardon << std::endl;
     //         frank.executeForm(pardon);
     //         std::cout << std::endl;
@@ -162,6 +168,6 @@ int main()
     //     {
     //         std::cerr << "Exception: " << e.what() << std::endl;
     //     }
-    // }
+    }
     return (0);
 }

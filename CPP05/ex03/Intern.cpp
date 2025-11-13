@@ -6,11 +6,15 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:14:30 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/31 16:19:55 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:24:13 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AForm.hpp"
 #include "Intern.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 Intern::Intern()
 {
@@ -31,7 +35,27 @@ Intern &Intern::operator=(const Intern &rhs)
     return *this;
 }
 
-AForm *Intern::makeForm(const std::string &formName, const std::string &target)
+AForm *Intern::createShrubbery(std::string target)
+{
+    return new ShrubberyCreationForm(target);
+}
+
+AForm *Intern::createRobotomy(std::string target)
+{
+    return new RobotomyRequestForm(target);
+}
+
+AForm *Intern::createPresidential(std::string target)
+{
+    return new PresidentialPardonForm(target);
+}
+
+const char* Intern::FormNotFoundException::what() const throw()
+{
+    return "Form not found exception";
+}
+
+AForm *Intern::makeForm(const std::string formName, const std::string target)
 {
     std::string formNames[3] = {
         "shrubbery creation",
@@ -39,12 +63,11 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
         "presidential pardon"
     };
 
-    AForm *(*formCreators[3])(const std::string &target) = {
-        [](const std::string &target) -> AForm* { return new ShrubberyCreationForm(target); },
-        [](const std::string &target) -> AForm* { return new RobotomyRequestForm(target); },
-        [](const std::string &target) -> AForm* { return new PresidentialPardonForm(target); }
+    AForm *(*formCreators[3])(std::string) = {
+        &Intern::createShrubbery,
+        &Intern::createRobotomy,
+        &Intern::createPresidential
     };
-
     for (int i = 0; i < 3; ++i)
     {
         if (formName == formNames[i])
@@ -53,7 +76,5 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
             return formCreators[i](target);
         }
     }
-
-    std::cout << "Error: Unknown form name \"" << formName << "\"." << std::endl;
-    return nullptr;
+    throw Intern::FormNotFoundException();
 }

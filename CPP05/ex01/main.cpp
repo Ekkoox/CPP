@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:38:02 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/29 18:00:43 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:28:48 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ int main()
         alice.signForm(taxForm);
         std::cout << taxForm << std::endl;
 
+        std::cout << "\n--- Alice tries to sign TaxForm already signed ---" << std::endl;
+        alice.signForm(taxForm);
+        std::cout << taxForm << std::endl;
+      
         std::cout << "\n--- Bob tries to sign TaxForm ---" << std::endl;
         bob.signForm(taxForm);
         std::cout << taxForm << std::endl;

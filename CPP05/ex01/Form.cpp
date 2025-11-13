@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:15:36 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/29 18:04:54 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:41:27 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void Form::beSigned(const Bureaucrat& bureaucrat)
 {
     if (bureaucrat.getGrade() > _signGrade)
         throw GradeTooLowException();
+    if (_isSigned)
+        throw std::runtime_error("Form is already signed");
     _isSigned = true;
 }
 

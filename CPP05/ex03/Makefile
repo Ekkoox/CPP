@@ -1,13 +1,14 @@
 NAME    = Bureaucrat
 SRCS    = main.cpp\
 			AForm.cpp\
+			Intern.cpp\
 			Bureaucrat.cpp\
 			RobotomyRequestForm.cpp\
 			ShrubberyCreationForm.cpp\
 			PresidentialPardonForm.cpp
 
 CXX     = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
