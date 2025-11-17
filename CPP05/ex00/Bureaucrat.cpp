@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:38:04 by enschnei          #+#    #+#             */
-/*   Updated: 2025/10/27 17:23:07 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:35:42 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::incrementGrade()
 {
     if (this->_grade - 1 < 1)
-        throw std::out_of_range("Grade too high");
+        throw GradeTooHighException();
     this->_grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
     if (this->_grade + 1 > 150)
-        throw std::out_of_range("Grade too low");
+        throw GradeTooLowException();
     this->_grade++;
 }
 

@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:38:02 by enschnei          #+#    #+#             */
-/*   Updated: 2025/11/12 13:28:48 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:46:18 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,29 +89,5 @@ int main()
     {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
-
-    std::cout << "\n=== LIMIT TESTS ===" << std::endl;
-    try
-    {
-        Bureaucrat top("Top", 1);
-        std::cout << top << std::endl;
-        top.incrementGrade(); // Exception
-    }
-    catch (std::exception &e)
-    {
-        std::cerr << "Exception: " << e.what() << std::endl;
-    }
-
-    try
-    {
-        Bureaucrat bottom("Bottom", 150);
-        std::cout << bottom << std::endl;
-        bottom.decrementGrade(); // Exception
-    }
-    catch (std::exception &e)
-    {
-        std::cerr << "Exception: " << e.what() << std::endl;
-    }
-
     return (0);
 }
