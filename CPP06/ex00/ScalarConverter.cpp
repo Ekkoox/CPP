@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:07:50 by enschnei          #+#    #+#             */
-/*   Updated: 2025/11/19 15:50:32 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:52:57 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int find_type(const std::string &literal)
         else if (literal[i] == 'f' && i == literal.length() - 1)
             f_count++;
         else if (!isdigit(literal[i]))
-            return (-1); // invalid
+            return (-1);
     }
     if (dot_count == 0 && f_count == 0)
         return (1); // int
@@ -69,7 +69,7 @@ static int find_type(const std::string &literal)
         return (2); // float
     else if (dot_count == 1 && f_count == 0)
         return (3); // double
-    return (-1); // invalid
+    return (-1);
 }
 
 static void convert_char(const std::string &literal)

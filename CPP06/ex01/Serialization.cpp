@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:01:23 by enschnei          #+#    #+#             */
-/*   Updated: 2025/11/20 18:58:08 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:53:28 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@ Serialization &Serialization::operator=(const Serialization &rhs)
     (void)rhs;
     return (*this);
 }
-
-// std::ostream &operator<<(std::ostream &os, const Data &data)
-// {
-//     os << "Data name: " << data.getName();
-//     return os;
-// }
 
 uintptr_t Serialization::serialize(Data* ptr)
 {
