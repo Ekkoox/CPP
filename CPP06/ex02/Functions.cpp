@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:22:31 by enschnei          #+#    #+#             */
-/*   Updated: 2025/11/24 17:26:53 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:27:41 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ Base*   generate(void)
         return (new B());
     else
         return (new C());
+}
+
+Base*   generateD(void)
+{
+    return (new D());
 }
 
 void    identify(Base* p)

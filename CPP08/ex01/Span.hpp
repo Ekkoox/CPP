@@ -3,6 +3,9 @@
 
 #include <vector>
 #include <stdexcept>
+#include <algorithm>
+#include <iostream>
+#include <limits>
 
 class Span {
     private:
@@ -17,6 +20,23 @@ class Span {
         void addNumber(int number);
         int shortestSpan() const;
         int longestSpan() const;
+
+        template <typename InputIt>
+        void addMultiple(InputIt begin, InputIt end);
+
+        class SpanFullException : public std::exception {
+            public:
+                const char* what() const noexcept override {
+                    return "Span is already full";
+                }
+        };
+
+        class NotEnoughNumbersException : public std::exception {
+            public:
+                const char* what() const noexcept override {
+                    return "Not enough numbers to find a span";
+                }
+        };
 };
 
 #endif

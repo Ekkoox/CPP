@@ -8,6 +8,7 @@
 #include <ctime>
 
 Base*   generate(void);
+Base*   generateD(void);
 void    identify(Base* p);
 void    identify(Base& p);
 

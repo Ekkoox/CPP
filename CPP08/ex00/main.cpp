@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 12:55:38 by enschnei          #+#    #+#             */
-/*   Updated: 2025/12/04 18:46:03 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/12/08 12:46:02 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <list>
 #include "easyfind.hpp"
 
-int main() {
+int main() 
+{
     // --- Test avec un Vector ---
     std::cout << "--- Test avec std::vector ---" << std::endl;
     std::vector<int> vec;
