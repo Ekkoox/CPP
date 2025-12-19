@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:46:33 by enschnei          #+#    #+#             */
-/*   Updated: 2025/12/18 19:03:27 by enschnei         ###   ########.fr       */
+/*   Updated: 2025/12/19 18:03:53 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,26 @@ int PmergeMe::parseInput(int ac, char **av) {
     return (EXIT_SUCCESS);
 }
 
+std::vector<size_t> generateJacobsthal(size_t n)
+{
+    std::vector<size_t> jacobsthal;
+    size_t j0 = 0;
+    size_t j1 = 1;
+    jacobsthal.push_back(j0);
+    if (n == 0) 
+        return (jacobsthal);
+    jacobsthal.push_back(j1);
+    for (size_t i = 2; i < n; ++i) {
+        size_t ji = jacobsthal[i - 1] + 2 * jacobsthal[i - 2];
+        jacobsthal.push_back(ji);
+    }
+    for (size_t i = 0; i < jacobsthal.size(); ++i) {
+        std::cout << jacobsthal[i] << " ";
+    }
+    std::cout << std::endl;
+    return (jacobsthal);
+}
+
 
 void PmergeMe::sortVector()
 {
@@ -90,7 +110,7 @@ void PmergeMe::sortVector()
     {
         straggler = this->_vector.back();
         this->_vector.pop_back();
-        std::cout << "Straggler is " << straggler << std::endl;
+        std::cout << "Straggler is: " << straggler << std::endl;
     }
     
     std::vector<std::pair<int, int> > pairs;
@@ -137,4 +157,9 @@ void PmergeMe::sortVector()
     std::cout << std::endl;
 
     // Jacobsthal sequence generation
+
+    generateJacobsthal(pairs.size());
+    
+    std::cout << "Jacobsthal sequence up to " << pairs.size() << std::endl;
+
 }
