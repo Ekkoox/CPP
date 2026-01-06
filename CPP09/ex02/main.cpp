@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:46:12 by enschnei          #+#    #+#             */
-/*   Updated: 2025/12/18 15:48:16 by enschnei         ###   ########.fr       */
+/*   Updated: 2026/01/06 15:30:26 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ int main(int ac, char **av)
         return (EXIT_FAILURE);
     std::cout << "Input parsed successfully." << std::endl;
     algo.sortVector();
+    algo.sortDeque();
+    algo.printResults();
     return (EXIT_SUCCESS);
 }

@@ -21,11 +21,11 @@ class PmergeMe
         PmergeMe();
         ~PmergeMe();
         PmergeMe(const PmergeMe &other);
-        PmergeMe &operator=(const PmergeMe &other);
-        int parseInput(int ac, char **av);
-        void sortVector();
         void sortDeque();
-        // void printResults() const;
+        void sortVector();
+        int parseInput(int ac, char **av);
+        PmergeMe &operator=(const PmergeMe &other);
+        void printResults() const;
 };
 
 #endif
