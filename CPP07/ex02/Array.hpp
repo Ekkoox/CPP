@@ -33,7 +33,7 @@ class Array
                 for (std::size_t i = 0; i < _size; ++i)
                     _array[i] = other._array[i];
             }
-            return *this;
+            return (*this);
         }
 
         ~Array()
@@ -52,12 +52,12 @@ class Array
         {
             if (index >= _size)
                 throw std::out_of_range("Index out of range");
-            return _array[index];
+            return (_array[index]);
         }
 
         std::size_t size() const
         {
-            return _size;
+            return (_size);
         }
 };
 
