@@ -15,7 +15,7 @@ class Array
     public:
         Array() : _array(new T[0]), _size(0) {}
 
-        Array(std::size_t n) : _array(new T[n]()), _size(n) {}
+        Array(unsigned int n) : _array(new T[n]()), _size(n) {}
 
         Array(const Array& other) : _array(new T[other._size]), _size(other._size)
         {

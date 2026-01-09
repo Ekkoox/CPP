@@ -6,25 +6,25 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 12:45:03 by enschnei          #+#    #+#             */
-/*   Updated: 2025/11/28 16:42:17 by enschnei         ###   ########.fr       */
+/*   Updated: 2026/01/09 13:34:55 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
 int main(void)
-{
+{   
     std::cout << "=== Test with int ===" << std::endl;
     Array<int> intArray(5);
     for (size_t i = 0; i < intArray.size(); ++i)
     {
-        intArray[i] = static_cast<int>(i + 1);
+        intArray[i] = static_cast<int>(i);
     }
     for (size_t i = 0; i < intArray.size(); ++i)
     {
         std::cout << intArray[i] << std::endl;
     }
-
+    
     std::cout << "=== Test with const int ===" << std::endl;
     const Array<int> constIntArray = intArray;
     for (size_t i = 0; i < constIntArray.size(); ++i)
